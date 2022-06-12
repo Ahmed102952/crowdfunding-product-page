@@ -16,8 +16,7 @@ export const PledgeInput = ({
     setBackModal(false);
     window.scrollTo({
       top: 200,
-      behavior: 'smooth',
-      
+      behavior: "smooth",
     });
   }
   return (
@@ -26,18 +25,18 @@ export const PledgeInput = ({
         price > 0 ? "justify-between" : "justify-end"
       }`}
     >
-      {price > 0 ? (
-        <p className="text-sm text-black text-opacity-80 w-fit mx-auto sm:mx-0">
-          Enter your pledge
-        </p>
-      ) : null}
+      <p className="text-sm text-black text-opacity-80 w-fit mx-auto sm:mx-0">
+        Enter your pledge
+      </p>
+
       <div
-        className={`flex items-center mt-4 sm:mt-0 space-x-4 ${
-          !(price > 0) ? "justify-end" : "justify-between"
-        }`}
+        className={`flex items-center mt-4 sm:mt-0 space-x-4 "justify-between"`}
       >
-        {price > 0 ? <PriceInput min={price} /> : null}
-        <button onClick={clickHandler} className="w-[8rem] h-[3rem] shadow-md text-base text-white rounded-3xl bg-moderate enabled:hover:bg-darkCyan disabled:bg-darkGray disabled:bg-opacity-30">
+        <PriceInput min={price} />
+        <button
+          onClick={clickHandler}
+          className="w-[8rem] h-[3rem] shadow-md text-base text-white rounded-3xl bg-moderate enabled:hover:bg-darkCyan disabled:bg-darkGray disabled:bg-opacity-30"
+        >
           Continue
         </button>
       </div>
