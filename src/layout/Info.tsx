@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box } from "../compoenets/Box";
 import { InfoBox } from "../compoenets/InfoBox";
-import { AnimatedLineProgressBar } from "@frogress/line";
+import {LineProgressBar} from "@frogress/line";
 
 export const Info = () => {
   const [clientWidth, setClientWidth] = useState(window.innerWidth);
@@ -19,9 +19,8 @@ export const Info = () => {
           <InfoBox h2="56" p="days left" />
         </div>
         <div className="w-full h-3"></div>
-        <AnimatedLineProgressBar
+        <LineProgressBar
           percent={75}
-          transition={{ easings: "linear" }}
           progressColor="hsl(176, 50%, 47%)"
           rounded={30}
           height={14}
