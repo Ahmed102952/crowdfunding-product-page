@@ -19,13 +19,6 @@ export const Info = () => {
           <InfoBox h2="56" p="days left" />
         </div>
         <div className="w-full h-3"></div>
-        {/* <LineProgressBar
-          percent={75}
-          progressColor="hsl(176, 50%, 47%)"
-          rounded={30}
-          height={14}
-          key={clientWidth}
-        /> */}
         <ProgressBar completed={75} bgColor='#81D9D4' isLabelVisible={false}/>
       </Box>
     </section>
