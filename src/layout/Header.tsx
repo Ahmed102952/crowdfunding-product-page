@@ -31,9 +31,9 @@ export const Header = () => {
           {menuItems.map((item, i) => {
             return (
               <li key={i}>
-                <a href="#" className="header-link">
+                <button className="header-link border-0">
                   {item}
-                </a>
+                </button>
               </li>
             );
           })}
