@@ -21,9 +21,7 @@ export const PledgeInput = ({
   }
   return (
     <div
-      className={`border-t border-black border-opacity-20 w-full pt-6 px-6 sm:flex sm:items-end ${
-        price > 0 ? "justify-between" : "justify-end"
-      }`}
+      className={`border-t border-black border-opacity-20 w-full pt-6 px-6 sm:flex sm:items-end justify-between`}
     >
       <p className="text-sm text-black text-opacity-80 w-fit mx-auto sm:mx-0">
         Enter your pledge
