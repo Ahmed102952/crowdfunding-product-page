@@ -1,4 +1,4 @@
-import React, { Children, JSXElementConstructor, ReactChildren } from 'react'
+import React from 'react'
 
 export const Box = ({children}: { children: JSX.Element[] | JSX.Element }) => {
   return (
