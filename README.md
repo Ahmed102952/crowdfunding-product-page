@@ -6,4 +6,6 @@
 
 - Responsive on all screens
 
+`npm run build` to build the project, `npm run dev` to run the page on local host
+
 [Live Preview](http://crowdfunding-product-page.am0.tech/)
