@@ -2,7 +2,7 @@
 
 [A Frontend Mentor challange](https://www.frontendmentor.io/challenges/crowdfunding-product-page-7uvcZe7ZR)
 
-- Landing page made with ReactJs with TS and TailwindCSS
+- Landing page made with HTML and ReactJs with TS, TailwindCSS
 
 - Responsive on all screens
 
