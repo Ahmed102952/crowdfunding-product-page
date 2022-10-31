@@ -22,7 +22,7 @@ export const PriceCardModal = ({
   remain,
   setChecked,
   setCompletedModal,
-  setBackModal
+  setBackModal,
 }: props) => {
   return (
     <div className="">
@@ -62,7 +62,13 @@ export const PriceCardModal = ({
               </div>
             ) : null}
           </div>
-          {index == id ? <PledgeInput setBackModal={setBackModal} price={price} setCompletedModal={setCompletedModal} /> : null}
+          {index == id ? (
+            <PledgeInput
+              setBackModal={setBackModal}
+              price={price}
+              setCompletedModal={setCompletedModal}
+            />
+          ) : null}
         </div>
       </div>
     </div>

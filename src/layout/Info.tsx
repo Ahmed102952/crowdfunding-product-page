@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Box } from "../compoenets/Box";
-import { InfoBox } from "../compoenets/InfoBox";
+import { Box } from "../components/Box";
+import { InfoBox } from "../components/InfoBox";
 import ProgressBar from "@ramonak/react-progress-bar";
 
 export const Info = () => {
@@ -19,7 +19,7 @@ export const Info = () => {
           <InfoBox h2="56" p="days left" />
         </div>
         <div className="w-full h-3"></div>
-        <ProgressBar completed={75} bgColor='#81D9D4' isLabelVisible={false}/>
+        <ProgressBar completed={75} bgColor="#81D9D4" isLabelVisible={false} />
       </Box>
     </section>
   );

@@ -14,7 +14,7 @@ export const SmallBtn = ({
   setChecked,
   value,
 }: props) => {
-  function clickHandler() {
+  const clickHandler = React.useCallback(() => {
     setChecked(value);
     setBackModal(true);
     window.scrollTo({
@@ -22,15 +22,12 @@ export const SmallBtn = ({
       left: 100,
       behavior: "smooth",
     });
-  }
+  }, []);
+
   return (
     <button
       className={`w-[10rem] h-[3.125rem] shadow-md text-base text-white rounded-3xl bg-moderate enabled:hover:bg-darkCyan disabled:bg-darkGray disabled:bg-opacity-30`}
-      ref={(el) => {
-        if (disabled) {
-          el ? (el.disabled = true) : null;
-        }
-      }}
+      disabled={disabled}
       value={value}
       onClick={clickHandler}
     >

@@ -4,9 +4,9 @@ import { Header } from "./layout/Header";
 import { Hero } from "./layout/Hero";
 import { About } from "./layout/About";
 import { BackModal } from "./layout/BackModal";
-import { Backdrop } from "./compoenets/Backdrop";
-import { CompletedModal } from "./compoenets/CompletedModal";
-import Attr from "./compoenets/attr";
+import { Backdrop } from "./components/Backdrop";
+import { CompletedModal } from "./components/CompletedModal";
+import Attr from "./components/attr";
 
 const App = () => {
   const [backModal, setBackModal] = useState(false);

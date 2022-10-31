@@ -1,6 +1,6 @@
 import React from "react";
-import { Box } from "../compoenets/Box";
-import { PriceCard } from "../compoenets/PriceCard";
+import { Box } from "../components/Box";
+import { PriceCard } from "../components/PriceCard";
 import DATA from "../../data.json";
 import { IData } from "../interface";
 
@@ -31,16 +31,18 @@ export const About = ({ setBackModal, setChecked }: props) => {
         </div>
         <div className="space-y-6">
           {DATA.map((i: IData) => {
-            return <PriceCard
-              title={i.title}
-              price={i.price}
-              description={i.description}
-              remain={i.remain}
-              key={i.id}
-              setBackModal={setBackModal}
-              id={i.id}
-              setChecked={setChecked}
-            />;
+            return (
+              <PriceCard
+                title={i.title}
+                price={i.price}
+                description={i.description}
+                remain={i.remain}
+                key={i.id}
+                setBackModal={setBackModal}
+                id={i.id}
+                setChecked={setChecked}
+              />
+            );
           })}
         </div>
       </Box>

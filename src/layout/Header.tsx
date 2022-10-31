@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../images/logo.svg";
-import { Burger } from "../compoenets/Burger";
+import { Burger } from "../components/Burger";
 import "../style.css";
-import { Menu } from "../compoenets/Menu";
+import { Menu } from "../components/Menu";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import { Backdrop } from "../compoenets/Backdrop";
+import { Backdrop } from "../components/Backdrop";
 
 const menuItems = ["About", "Discover", "Get Started"];
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  function setIsMenuOpenHandler() {
+  const setIsMenuOpenHandler = React.useCallback(() => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
       return;
     }
     setIsMenuOpen(true);
-  }
-  useEffect(() => {
-    return isMenuOpen ? disableBodyScroll(document.body) : enableBodyScroll(document.body);
+  }, []);
 
-  }, [isMenuOpen])
+  useEffect(() => {
+    return isMenuOpen
+      ? disableBodyScroll(document.body)
+      : enableBodyScroll(document.body);
+  }, [isMenuOpen]);
+
   return (
     <header className="bg-hero-mobile sm:bg-hero-desktop bg-cover h-[18.75rem] sm:h-[25rem] px-6">
       <div className="flex justify-between pt-9 sm:pt-12 max-w-[70em] mx-auto">
@@ -31,17 +34,12 @@ export const Header = () => {
           {menuItems.map((item, i) => {
             return (
               <li key={i}>
-                <button className="header-link border-0">
-                  {item}
-                </button>
+                <button className="header-link border-0">{item}</button>
               </li>
             );
           })}
         </ul>
-        <button
-          onClick={setIsMenuOpenHandler}
-          className="sm:hidden z-30"
-        >
+        <button onClick={setIsMenuOpenHandler} className="sm:hidden z-30">
           <Burger isOpen={isMenuOpen} />
         </button>
         <div
@@ -49,9 +47,9 @@ export const Header = () => {
             isMenuOpen ? "mt-[70px]" : ""
           }`}
         >
-          <Menu items={menuItems} setIsMenuOpenHandler={setIsMenuOpenHandler}/>
+          <Menu items={menuItems} setIsMenuOpenHandler={setIsMenuOpenHandler} />
         </div>
-      {isMenuOpen? <Backdrop zIndex={"20"}/> : null}
+        {isMenuOpen ? <Backdrop zIndex={20} /> : null}
       </div>
     </header>
   );

@@ -2,13 +2,14 @@ import React, { useState } from "react";
 
 export const Bookmark = () => {
   const [isActive, setIsActive] = useState(false);
-  function clickHandler() {
+  const clickHandler = React.useCallback(() => {
     if (isActive) {
       setIsActive(false);
       return;
     }
     setIsActive(true);
-  }
+  }, []);
+
   return (
     <button className="ml-1" onClick={clickHandler}>
       <div className="rounded-[30px] flex items-center bg-black bg-opacity-5 shadow-md">

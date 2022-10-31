@@ -1,9 +1,11 @@
 import React from "react";
-import { Box } from "../compoenets/Box";
-import close from "../../images/icon-close-modal.svg";
-import { PriceCardModal } from "../compoenets/PriceCardModal";
+import { Box } from "../components/Box";
+import { PriceCardModal } from "../components/PriceCardModal";
 import DATA from "../../data.json";
 import { IData } from "../interface";
+
+// assets
+import close from "../assets/images/icon-close-modal.svg";
 
 interface BackModalProps {
   setBackModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,9 +19,10 @@ export const BackModal = ({
   checked,
   setCompletedModal,
 }: BackModalProps) => {
-  function closeHandler() {
+  const closeHandler = React.useCallback(() => {
     setBackModal(false);
-  }
+  }, []);
+
   return (
     <Box>
       <div className="relative w-full z-[40]">

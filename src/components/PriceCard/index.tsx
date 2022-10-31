@@ -1,5 +1,5 @@
 import React from "react";
-import { SmallBtn } from "../SmallBtn";
+import { SmallBtn } from "../Btn";
 
 interface props {
   title: string;
@@ -8,7 +8,7 @@ interface props {
   remain: number;
   setChecked: React.Dispatch<React.SetStateAction<number>>;
   setBackModal: React.Dispatch<React.SetStateAction<boolean>>;
-  id: number
+  id: number;
 }
 export const PriceCard = ({
   title,
@@ -17,7 +17,7 @@ export const PriceCard = ({
   remain,
   setBackModal,
   setChecked,
-  id
+  id,
 }: props) => {
   return (
     <div
@@ -34,7 +34,11 @@ export const PriceCard = ({
       <p className="text-xs text-black text-opacity-80 mb-8 sm:mb-7 text-left ">
         {description}
       </p>
-      <div className={`sm:flex sm:items-center  ${!(price > 0)? "sm:justify-end" : "sm:justify-between"}`}>
+      <div
+        className={`sm:flex sm:items-center  ${
+          !(price > 0) ? "sm:justify-end" : "sm:justify-between"
+        }`}
+      >
         {!(price == 0) ? (
           <div className="flex items-center space-x-2 mb-6 sm:mb-0">
             <h3 className="text-2xl text-black font-bold">{remain}</h3>
