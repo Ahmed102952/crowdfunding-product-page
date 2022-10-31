@@ -1,6 +1,5 @@
 import React from "react";
 import { PriceInput } from "../PriceInput";
-import { SmallBtn } from "../SmallBtn";
 interface props {
   price: number;
   setCompletedModal: React.Dispatch<React.SetStateAction<boolean>>;

@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box } from "../compoenets/Box";
 import close from "../../images/icon-close-modal.svg";
 import { PriceCardModal } from "../compoenets/PriceCardModal";
 import DATA from "../../data.json";
-import {IData} from "../interface"
+import { IData } from "../interface";
 
-
-interface props {
+interface BackModalProps {
   setBackModal: React.Dispatch<React.SetStateAction<boolean>>;
-  setChecked: React.Dispatch<React.SetStateAction<number>>
+  setChecked: React.Dispatch<React.SetStateAction<number>>;
   checked: number;
   setCompletedModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
-export const BackModal = ({ setBackModal, setChecked, checked, setCompletedModal }: props) => {
+export const BackModal = ({
+  setBackModal,
+  setChecked,
+  checked,
+  setCompletedModal,
+}: BackModalProps) => {
   function closeHandler() {
     setBackModal(false);
   }
@@ -34,7 +38,20 @@ export const BackModal = ({ setBackModal, setChecked, checked, setCompletedModal
         </p>
         <div className="space-y-5">
           {DATA.map((i: IData) => {
-            return <PriceCardModal setCompletedModal={setCompletedModal} setBackModal={setBackModal} title={i.title} description={i.description} remain={i.remain} id={i.id} index={checked} price={i.price} setChecked={setChecked} key={i.id}/>
+            return (
+              <PriceCardModal
+                setCompletedModal={setCompletedModal}
+                setBackModal={setBackModal}
+                title={i.title}
+                description={i.description}
+                remain={i.remain}
+                id={i.id}
+                index={checked}
+                price={i.price}
+                setChecked={setChecked}
+                key={i.id}
+              />
+            );
           })}
         </div>
       </div>

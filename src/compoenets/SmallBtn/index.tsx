@@ -3,19 +3,24 @@ import React from "react";
 interface props {
   text: string;
   disabled?: boolean;
-  setBackModal: React.Dispatch<React.SetStateAction<boolean>>
-  setChecked: React.Dispatch<React.SetStateAction<number>>
-  value: number
+  setBackModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setChecked: React.Dispatch<React.SetStateAction<number>>;
+  value: number;
 }
-export const SmallBtn = ({ text, disabled,  setBackModal, setChecked, value}: props) => {
-  let btn;
+export const SmallBtn = ({
+  text,
+  disabled,
+  setBackModal,
+  setChecked,
+  value,
+}: props) => {
   function clickHandler() {
-    setChecked(value)
-    setBackModal(true)
+    setChecked(value);
+    setBackModal(true);
     window.scrollTo({
       top: 100,
       left: 100,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   }
   return (
