@@ -1,7 +1,7 @@
 export interface IData {
-  id:number;
+  id: number;
   title: string;
   description: string;
   remain: number;
-  price: number
+  price: number;
 }

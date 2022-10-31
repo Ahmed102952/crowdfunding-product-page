@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
   .header-link {
     @apply text-white text-xs;
